@@ -1,0 +1,512 @@
+body {
+    background: #ffebb9;
+    height: 100vh;
+    display: grid;
+    margin: 0;
+}
+
+/* ----- HEADER ----- */
+.header {
+    position: absolute;
+    top: 0;
+    font-family: 'Climate Crisis', sans-serif; font-size: 30px;
+    color: #e07f3e;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+/* ----- INFO-BAR ----- */
+.card-container {
+    box-shadow: 0 4px 8px 0 #191919;
+    transition: 0.3s;
+    
+}
+
+.card {
+    position:  fixed;
+    padding: 20px;
+    top: 160px;
+    right: 450px;
+    width: 210px;
+    height: 460px;
+    background: cornsilk;
+    box-shadow: 0 4px 8px 0 #191919;
+    transition: 0.3s;
+    border: 1.5px solid rgb(208, 198, 156);
+    border-radius: 2px;
+    font-family: 'Montserrat'; font-size: 13px;
+    box-shadow: 12px 12px  #d28654;
+}
+
+.container {
+    padding: 2px 16px;
+  }
+
+
+/* ----- FLIP-CARD ----- */
+
+.flip-card {
+    position: fixed;
+    top: 160px;
+    left: 200px;
+    width: 500px;
+    height: 500px;
+    
+    
+    /*perspective: 1000px;    /* 3D-Effekt */
+}
+
+/* Vorder-und Rückseite der Karte positionieren */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;   /* 3D-Effekt */
+    
+    
+}
+
+/* Karte horizontal flippen, wenn man mit der Maus darüber fährt */
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 2px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 12px 12px #d28654;
+}
+
+.flip-card-front {
+    background-color: #f0c54b;
+}
+
+.flip-card-back {
+    background-color: #191919;
+    transform: rotateY(180deg);
+}
+
+
+/* ----- VORDERSEITE FLIP-CARD ----- */
+
+
+.container-art {
+    width: 500px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+/* --- Boot --- */
+.boat {
+    position: absolute;
+    top: 350px;
+    width: 350px;
+    height: 75px;
+    background: #AA4C0A;
+    border-top: 15px solid #623110;
+    border-radius: 50% 50% 68% 32% / 0% 0% 100% 93%;
+}
+
+/* --- Linie oben am Boot --- */
+.boat-lines {
+    position: absolute;
+    top: 350px;
+    width: 350px;
+    height: 2px;
+    background-color: #49240c;
+}
+
+/* --- Obere Linie im Boot --- */
+.boat-lines::before {
+    content: "";
+    position: absolute;
+    left: 8px;
+    top: 36px;
+    width: 320px;
+    height: 2px;
+    background-color: #793a10;
+    border-radius: 50% ;
+}
+
+/* --- Untere Linie im Boot --- */
+.boat-lines::after {
+    content: "";
+    position: absolute;
+    left: 29px;
+    top: 61px;
+    width: 254px;
+    height: 2px;
+    background-color: #793a10;
+    border-radius: 50% ;
+}
+
+/* --- Mast --- */
+.mast {
+    position: absolute;
+    width: 10px;
+    height: 300px;
+    background: rgb(171, 57, 0);
+    top: 50px;
+    left: 43%;
+    border-radius: 100% 100% 0% 0% / 5% 5% 0% 0%;
+}
+
+/* --- Linkes Segel ---*/
+
+.sail-left {
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border-top: 265px solid transparent;
+    border-right: 165px solid #191919;
+    border-bottom: 0px solid transparent;
+    border-radius: 0 5% 75% 35% / 0 0% 5% 30%;
+    left: 45px;
+    top: 63px;
+}
+
+/* Aussparung links Buchstabe "M" im linken Segel*/
+.sail-left::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 60px;
+    background: #f0c54b;
+    top: -60px;
+    left: 70px;
+    border-radius: 0 0 100% 0 / 0 0 1% 0;
+}
+    
+/* Aussparung rechts Buchstabe "M" im linken Segel*/
+.sail-left::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 59px;
+    background: #f0c54b;
+    top: -60px;
+    left: 110px;
+    border-radius: 0 0 800% 0% / 0 0 30% 0%;
+}
+
+/* Dreieck über rechter Aussprägung Buchstabe "M"*/
+.sail-left-triangles {
+    position: absolute;
+    border-top: 32px solid transparent;
+    border-right: 20px solid #f0c54b;
+    border-bottom: 0px solid transparent;
+    left: 155px;
+    top: 236px;
+}
+
+/* Dreieck über linker Aussprägung Buchstabe "M"*/
+.sail-left-triangles::before {
+    content: "";
+    position: absolute;
+    border-top: 32px solid transparent;
+    border-right: 20px solid #f0c54b;
+    border-bottom: 0px solid transparent;
+    left: -40px;
+    top: -32px;
+}
+
+/* --- Rechtes Segel --- */
+
+.sail-right {
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border-top: 245px solid transparent;
+    border-left: 195px solid #191919;
+    border-bottom: 0px solid transparent;
+    border-radius: 0% 0 75% 75% / 0% 0 5% 5%;
+    right: 75px;
+    top: 63px;
+}
+
+/* Divider zwischen "K" und "I" im rechten Segel - Säule*/
+/* Höher gesetzt, um die dünne, schwarze Linie zu verdecken */
+.sail-right::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 150px;
+    background: #f0c54b;
+    top: -150px;
+    right: 100px;
+    border-radius: 0 0 0 200% / 0 0 0 0.5%;
+}
+
+/* --- Falls das Segel eine Hintergrundfarbe bekommt --- */
+/* Divider zwischen "K" und "I" im linken Segel - oberes Dreieck*/
+.k-i-divider {
+    position: absolute;
+    border-top: 25px solid transparent;
+    border-left: 20px solid #f0c54b;
+    border-bottom: 0px solid transparent;
+    right: 175px;
+    top: 156.5px;
+}
+
+/* Dreieck links am Divider / rechts im Buchstabe K */
+.k-i-divider::before {
+    content: "";
+    position: absolute;
+    border-top: 16px solid transparent;
+    border-right: 14px solid #f0c54b;
+    border-bottom: 16px solid transparent;
+    right: 20px;
+    top: 30px;
+}
+
+/* Rechteck rechts am Divider / links im Buchstabe I */
+.k-i-divider::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 40px;
+    background: #f0c54b;
+    right: -20px;
+    top: 63px;
+}
+
+/* Untere Aussparung Buchstabe "K"*/
+.k {
+    position: absolute;
+    width: 20px;
+    height: 48px;
+    background: #f0c54b;
+    right: 220px;
+    top: 259px;
+    border-radius: 0 0 50% 800% / 0 0 10% 34%;
+}
+
+/* Obere Aussparung Buchstabe "K"*/
+/* Höher gesetzt, um die dünne, schwarze Linie zu verdecken */
+.k::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 100px;
+    background: #f0c54b;
+    right: 0px;
+    top: -160px;
+}
+
+/* Obere Ausparung Buchstabe "K" - Dreieck*/
+.k::after {
+    content: "";
+    position: absolute;
+    border-top: 25px solid transparent;
+    border-left: 20px solid #f0c54b;
+    border-bottom: 0px solid transparent;
+    right: 0px;
+    top: -159px;
+}
+
+/* Aussparung Buchstabe "I" - Rechteck rechts*/
+.i {
+    position: absolute;
+    width: 20px;
+    height: 40px;
+    background: #f0c54b;
+    right: 110px;
+    top: 245px;
+}
+
+/* Aussparung Buchstabe "I" - Rechteck 2 rechts*/
+.i::before {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 50px;
+    background: #f0c54b;
+    right: -30px;
+    top: 18px;
+}
+
+
+/* --- RÜCKSEITE FLIP-CARD  --- */
+
+/* Farben für die Rückseite der FLip-Card invertieren*/
+/* Leider nicht dynimisch geschafft, da sonst z.B das ganze Segel Gelb wird, auch der transparente Teil */
+
+
+/* Linkes Segel Rückseite */
+
+.sail-left-inverted {
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border-top: 265px solid transparent;
+    border-right: 165px solid #f0c54b;
+    border-bottom: 0px solid transparent;
+    border-radius: 0 5% 75% 35% / 0 0% 5% 30%;
+    left: 45px;
+    top: 63px;
+}
+
+/* Aussparung links Buchstabe "M" im linken Segel*/
+.sail-left-inverted::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 60px;
+    background: #191919;
+    top: -60px;
+    left: 70px;
+    border-radius: 0 0 100% 0 / 0 0 1% 0;
+}
+
+/* Aussparung rechts Buchstabe "M" im linken Segel*/
+.sail-left-inverted::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 59px;
+    background: #191919;
+    top: -60px;
+    left: 110px;
+    border-radius: 0 0 800% 0% / 0 0 30% 0%;
+}
+
+/* Dreieck über rechter Aussparung Buchstabe "M"*/
+.sail-left-triangles-inverted {
+    position: absolute;
+    border-top: 32px solid transparent;
+    border-right: 20px solid #191919;
+    border-bottom: 0px solid transparent;
+    left: 155px;
+    top: 236px;
+}
+
+/* Dreieck über linker Aussparung Buchstabe "M"*/
+.sail-left-triangles-inverted::before {
+    content: "";
+    position: absolute;
+    border-top: 32px solid transparent;
+    border-right: 20px solid #191919;
+    border-bottom: 0px solid transparent;
+    left: -40px;
+    top: -32px;
+}
+
+/* Rechtes Segel Rückseite */
+
+.sail-right-inverted {
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border-top: 245px solid transparent;
+    border-left: 195px solid #f0c54b;
+    border-bottom: 0px solid transparent;
+    border-radius: 0% 0 75% 75% / 0% 0 5% 5%;
+    right: 75px;
+    top: 63px;
+}
+
+/* Divider zwischen "K" und "I" im rechten Segel - Säule*/
+.sail-right-inverted::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 126.5px;
+    background: #191919;
+    top: -126.5px;
+    right: 100px;
+    border-radius: 0 0 0 200% / 0 0 0 0.5%;
+}
+
+/* Divider zwischen "K" und "I" im linken Segel oben - Dreieck*/
+.k-i-divider-inverted {
+    position: absolute;
+    border-top: 25px solid transparent;
+    border-left: 20px solid #191919;
+    border-bottom: 0px solid transparent;
+    right: 175px;
+    top: 157px;
+}
+
+/* Dreieck links am Divider / rechts im Buchstabe K */
+.k-i-divider-inverted::before {
+    content: "";
+    position: absolute;
+    border-top: 16px solid transparent;
+    border-right: 14px solid #191919;
+    border-bottom: 16px solid transparent;
+    right: 20px;
+    top: 30px;
+}
+
+/* Rechteck rechts am Divider / links im Buchstabe I */
+.k-i-divider-inverted::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 40px;
+    background: #191919;
+    right: -20px;
+    top: 63px;
+}
+
+/* Untere Aussparung Buchstabe "K"*/
+.k-inverted {
+    position: absolute;
+    width: 20px;
+    height: 48px;
+    background: #191919;
+    right: 220px;
+    top: 259px;
+    border-radius: 0 0 50% 800% / 0 0 10% 34%;
+}
+
+/* Obere Aussparung Buchstabe "K"*/
+.k-inverted::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 80px;
+    background: #191919;
+    right: 0px;
+    top: -134.5px;
+}
+
+/* Dreieck über linker Aussparung Buchstabe "K"*/
+.k-inverted::after {
+    content: "";
+    position: absolute;
+    border-top: 25px solid transparent;
+    border-left: 20px solid #191919;
+    border-bottom: 0px solid transparent;
+    right: 0px;
+    top: -159px;
+}
+
+/* Aussparung Buchstabe "I" - Rechteck rechts*/
+.i-inverted {
+    position: absolute;
+    width: 20px;
+    height: 40px;
+    background: #191919;
+    right: 110px;
+    top: 245px;
+}
+
+/* Aussparung Buchstabe "I" - Rechteck 2 rechts*/
+.i-inverted::before {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 50px;
+    background: #191919;
+    right: -30px;
+    top: 18px;
+}
